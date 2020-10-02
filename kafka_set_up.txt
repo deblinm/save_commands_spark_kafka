@@ -1,0 +1,26 @@
+cd kafka_2.12-2.4.0\bin\windows
+
+---Start a ZooKeeper server
+
+zookeeper-server-start.bat C:\Users\debli\kafka_2.12-2.4.0\config\zookeeper.properties
+
+
+---Start a Kafka server
+
+kafka-server-start.bat C:\Users\debli\kafka_2.12-2.4.0\config\server.properties
+
+------Create a Kafka topic with single partition and one replica
+
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+
+**here test is the name of kafka topic
+
+---Send some messages
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
+This is a message
+This is another message
+
+---Start a consumer
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
