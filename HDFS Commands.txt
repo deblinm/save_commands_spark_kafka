@@ -1,0 +1,24 @@
+sudo -u debli hdfs dfs -ls /user/debli/datasets
+hdfs dfs -touchz /user/debli/datasets/fam_nam.csv
+sudo -u debli hdfs dfs -chmod 777 /user/debli/datasets/fam_nam.csv
+
+hdfs dfs -get /user/debli/datasets/fam_nam.csv
+vi fam_nam.csv #or use any other tool and modify it
+sudo -u debli hdfs dfs -put -f fam_nam.csv /user/debli/datasets/fam_nam.csv
+
+
+
+	
+
+
+/etc/hosts
+
+127.0.0.1       localhost       localhost.domain
+192.168.0.108   quickstart.cloudera     quickstart
+
+
+https://blog.clairvoyantsoft.com/upgrading-to-java8-on-the-cloudera-quickstart-vm-48855b1bc430
+export JAVA_HOME="/usr/lib/jvm/jre-1.8.0-openjdk.x86_64"
+
+
+./bin/spark-submit --class frst_database_connectivity C:\Users\debli\Documents\SparkScala\steps_to_database_connectivity\target\scala-2.11\steps_to_database_connectivity_2.11-0.1.jar
